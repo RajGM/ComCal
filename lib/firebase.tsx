@@ -4,7 +4,13 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  
+  apiKey: "AIzaSyBek4og15pqMpsb098xm7gkCRdJX1a4Obw",
+  authDomain: "comcal-9c172.firebaseapp.com",
+  projectId: "comcal-9c172",
+  storageBucket: "comcal-9c172.appspot.com",
+  messagingSenderId: "579408151050",
+  appId: "1:579408151050:web:2a31052bbca08ad11255f3",
+  measurementId: "G-K8BFG4B95R"
 };
 
 if (!firebase.apps.length) {
