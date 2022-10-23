@@ -18,8 +18,6 @@ body {
   margin-top: 50px;
 }
 
-
-
 main {
   padding: 1rem 10vw;
 }
@@ -98,6 +96,10 @@ code {
 
 /* Buttons */
 
+.cate-btn{
+  min-width: 180px;
+}
+
 .btn, button {
   background-color: var(--color-gray);
   border: none;
@@ -121,7 +123,6 @@ code {
     font-size: 0.8rem;
   }
 }
-
 
 button:hover {
   filter: brightness(90%);
@@ -277,7 +278,6 @@ input[type="file"] {
 
 .categoryBar ul {
   width: 100%;
-  background-color: #3bdf72;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -285,6 +285,13 @@ input[type="file"] {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+}
+
+.categoryBar img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
 .categoryBar li {
@@ -295,13 +302,10 @@ input[type="file"] {
 /*main  body*/
 .middle{
   display: flex;
-  flex-direction: column ;
-  /*justify-content: center;
-  align-items: center;
-  */
+  flex-direction: column;
+  width: 100%;
   height: 100%;
   gap:20px;
-  background-color: #df3b3b;
 }
 
 .childDiv{
@@ -310,8 +314,8 @@ input[type="file"] {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
   gap:10px;
-  background-color: #3bdf72;
 }
 
 /*categories-logo*/
@@ -323,9 +327,70 @@ input[type="file"] {
   padding: 0.5rem 1rem;
 }
 
-.alltiles{
+.mainFeed{
+  display: block;
+  width: 90%;
+  height: 100%;
+  background-color: white;
+}
+
+.eventCard{
+  display: block;
+  width: 24%;
+  float: left;
+  background-color: var(--color-green);
+  margin-top:10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 1570px) {
+  .middle{
+    width: 1570px;
+  }
+
+  .eventCard{
+    width: 50%;
+  }
+}
+
+.eventTile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.rowFlex{
   display: flex;
   flex-direction: row;
-  background-color: #3bdf72;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #df3b3b;
+  width: 100%;
+}
+
+.sponsoredButton{
+  background-color: var(--color-blue);
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
   height: 100%;
+  max-width: 120px;
+}
+
+.iconLogo{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #08090a;
+}
+
+.contributorAvator{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #08090a;
 }

@@ -12,7 +12,7 @@ export default function FilterBar() {
     <nav className="categoryBar">
       <ul>
         <li>
-          <button className="btn-logo">Filter</button>
+          <button className="btn-logo cate-btn">Filters</button>
         </li>
 
         {/* categories are not being fetched */}

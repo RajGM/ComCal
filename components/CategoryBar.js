@@ -13,7 +13,7 @@ export default function CategoryBar() {
     <nav className="categoryBar">
       <ul>
         <li>
-          <button className="btn-logo">Categories</button>
+          <button className="btn-logo cate-btn">Categories</button>
         </li>
 
         {/* categories are not being fetched */}

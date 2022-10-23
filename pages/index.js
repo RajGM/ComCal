@@ -1,5 +1,6 @@
 import CategoryBar from "@components/CategoryBar"
 import FilterBar from "@components/FilterBar";
+import MainFeed from "@components/MainFeed";
 
 const Home = () => {
   return (
@@ -9,6 +10,9 @@ const Home = () => {
       </div>
       <div className="childDiv">
       <FilterBar/>
+      </div>
+      <div className="childDiv">
+      <MainFeed/>
       </div>
     </div>
   )
