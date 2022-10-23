@@ -1,13 +1,11 @@
-import CategoryTile from "./CategoryTile";
-
-export default function CategoriesFeed({ categories }) {
-  return categories ? categories.map((category) => <CategoryBar category={category} key={category} />) : null;
+export default function FilterFeed({ filters }) {
+  return filters ? filters.map((filter) => <FilterBar filter={filter} key={filter} />) : null;
 }
 
-function CategoryBar({ category }) {
+function FilterBar({ filter }) {
   return (
     <div className="btn-logo">
-        <CategoryTile category={category} />
+        <button className="btn-logo">{filter}</button>
     </div>
   );
 }
