@@ -1,19 +1,18 @@
 import { useContext } from 'react';
 import { catogriesContext } from '@lib/context';
 import Loader from "@components/Loader";
-import CategoriesFeed from "@components/CategoriesFeed";
-import getCategories from "@lib/firebase";
+import FilterFeed from "@components/FilterFeed";
 
 //CategoryBar
-export default function CategoryBar() {
+export default function FilterBar() {
   const { selectedCategory, username } = useContext(catogriesContext);
-  let categories = ["Hackathon","OpenSource","Internships","Scholarships","College Applications"];
+  let filters = ["Onsite","Remote","Hybrid"];
   
   return (
     <nav className="categoryBar">
       <ul>
         <li>
-          <button className="btn-logo">Categories</button>
+          <button className="btn-logo">Filter</button>
         </li>
 
         {/* categories are not being fetched */}
@@ -24,7 +23,7 @@ export default function CategoryBar() {
         )}
 
         {/* categories are fetched */}
-          <CategoriesFeed categories={categories} />
+          <FilterFeed filters={filters} />
         
       </ul>
     </nav>
