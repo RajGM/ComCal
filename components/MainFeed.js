@@ -1,4 +1,6 @@
-let data={
+import { useState } from 'react'
+
+let data = {
     title: "HackHarvard",
     Link: "https://hackharvard.io/",
     ApplicationDate: "2021-09-01",
@@ -13,37 +15,37 @@ export default function MainFeed() {
         <div className="mainFeed">
 
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
             <div className="eventCard">
-                <TestTile data={data}/>
+                <TestTile data={data} />
             </div>
 
 
@@ -51,21 +53,20 @@ export default function MainFeed() {
     );
 }
 
-function TestTile({data}) {
+function TestTile({ data }) {
+    const [dataToshow, setDataToshow] = useState(data.title);
+    
     return (
         <div className="eventTile">
-            <div className="rowFlex">
-                <button className="sponsoredButton">Sponsored</button>
-                <button>🛎️</button>
+            <div className="space">
+
             </div>
             <div>
-                <img src="https://hackharvard.io/static/media/HH22_logo_transparent_square.ebd93df1c22cd9cfd0ae.png" alt="title" className="iconLogo"/>
+                <img src="https://hackharvard.io/static/media/HH22_logo_transparent_square.ebd93df1c22cd9cfd0ae.png" alt="title" className="iconLogo" />
             </div>
             <div>
-                Title
-            </div>
-            <div>
-                Link
+                <a href={data.Link} onMouseEnter={()=>setDataToshow(data.Link)} onMouseLeave={()=>setDataToshow(data.title)} target="_blank">{dataToshow} </a>
+                <img src="export.png" alt="title" className="redirectIcon" onMouseEnter={()=>setDataToshow(data.Link)} onMouseLeave={()=>setDataToshow(data.title)}/>
             </div>
             <div>
                 Application Date:{data.ApplicationDate}
@@ -75,16 +76,16 @@ function TestTile({data}) {
             </div>
             <div className="rowFlex">
                 <div>
-                <button>Real</button>
+                    <button>Real</button>
                 </div>
                 <div>
-                {data.Real}
+                    {data.Real}
                 </div>
                 <div>
-                {data.Spam}
+                    {data.Spam}
                 </div>
                 <div>
-                <button>Spam</button>
+                    <button>Spam</button>
                 </div>
             </div>
             <div>
@@ -92,9 +93,9 @@ function TestTile({data}) {
             </div>
             <div className="rowFlex">
                 <div >
-                    Posted by 
-                    
-                    <img src="https://hackharvard.io/static/media/HH22_logo_transparent_square.ebd93df1c22cd9cfd0ae.png" alt="title" className="contributorAvator"/>
+                    Posted by
+
+                    <img src="https://hackharvard.io/static/media/HH22_logo_transparent_square.ebd93df1c22cd9cfd0ae.png" alt="title" className="contributorAvator" />
 
                 </div>
                 <div>

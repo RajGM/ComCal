@@ -338,7 +338,8 @@ input[type="file"] {
   display: block;
   width: 24%;
   float: left;
-  background-color: var(--color-green);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin-top:10px;
   margin-left: 5px;
   margin-right: 5px;
@@ -367,7 +368,6 @@ input[type="file"] {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: #df3b3b;
   width: 100%;
 }
 
@@ -393,4 +393,13 @@ input[type="file"] {
   height: 20px;
   border-radius: 50%;
   background-color: #08090a;
+}
+
+.space{
+  height: 20px;
+}
+
+.redirectIcon{
+  width: 15px;
+  height: 15px;
 }
