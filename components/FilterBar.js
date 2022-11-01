@@ -2,11 +2,12 @@ import { useContext } from 'react';
 import { catogriesContext } from '@lib/context';
 import Loader from "@components/Loader";
 import FilterFeed from "@components/FilterFeed";
+let filters = ["Onsite","Remote","Hybrid"];
 
 //CategoryBar
 export default function FilterBar() {
   const { selectedCategory, username } = useContext(catogriesContext);
-  let filters = ["Onsite","Remote","Hybrid"];
+  
   
   return (
     <nav className="categoryBar">

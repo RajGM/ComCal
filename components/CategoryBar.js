@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import { catogriesContext } from '@lib/context';
+import { useContext, useState } from 'react';
+import { UserContext } from '@lib/context';
 import Loader from "@components/Loader";
 import CategoriesFeed from "@components/CategoriesFeed";
-import getCategories from "@lib/firebase";
+let categories = ["Hackathon","OpenSource","Internships","Scholarships","College Applications"];
 
 //CategoryBar
 export default function CategoryBar() {
-  const { selectedCategory, username } = useContext(catogriesContext);
-  let categories = ["Hackathon","OpenSource","Internships","Scholarships","College Applications"];
+  const {username}  = useContext(UserContext);
   
   return (
     <nav className="categoryBar">
@@ -25,7 +24,7 @@ export default function CategoryBar() {
 
         {/* categories are fetched */}
           <CategoriesFeed categories={categories} />
-        
+
       </ul>
     </nav>
   );
