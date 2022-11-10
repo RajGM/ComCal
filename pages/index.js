@@ -9,9 +9,6 @@ const Home = () => {
       <CategoryBar />
       </div>
       <div className="childDiv">
-      <FilterBar/>
-      </div>
-      <div className="childDiv">
       <MainFeed/>
       </div>
     </div>

@@ -2,21 +2,22 @@ import { useContext } from 'react';
 import { catogriesContext } from '@lib/context';
 import Loader from "@components/Loader";
 import FilterFeed from "@components/FilterFeed";
-let filters = ["Onsite","Remote","Hybrid"];
 
 //CategoryBar
 export default function FilterBar() {
   const { selectedCategory, username } = useContext(catogriesContext);
   
-  
   return (
     <nav className="categoryBar">
       <ul>
         <li>
-          <button className="btn-logo cate-btn">Filters</button>
+          <div className="label">Filters</div>
         </li>
 
-        {/* categories are not being fetched */}
+        <li>
+          <div className='space'></div>
+        </li>
+
         {!username && (
           <ul>
             <li><Loader show={true} /></li>
@@ -24,8 +25,8 @@ export default function FilterBar() {
         )}
 
         {/* categories are fetched */}
-          <FilterFeed filters={filters} />
-        
+        <FilterFeed selectedCategory={"Scholarships"}/>
+
       </ul>
     </nav>
   );

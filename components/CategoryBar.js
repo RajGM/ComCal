@@ -1,31 +1,38 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '@lib/context';
-import Loader from "@components/Loader";
 import CategoriesFeed from "@components/CategoriesFeed";
-let categories = ["Hackathon","OpenSource","Internships","Scholarships","College Applications"];
+let categories = ["Hackathon", "OpenSource", "Internships", "Scholarships", "College Applications"];
+import FilterBar from "@components/FilterBar";
 
 //CategoryBar
 export default function CategoryBar() {
-  const {username}  = useContext(UserContext);
+  const { username } = useContext(UserContext);
   
   return (
-    <nav className="categoryBar">
-      <ul>
-        <li>
-          <button className="btn-logo cate-btn">Categories</button>
-        </li>
-
-        {/* categories are not being fetched */}
-        {!username && (
+    <div className='middle'>
+      <div className='childDiv'>
+        <nav className="categoryBar">
           <ul>
-            <li><Loader show={true} /></li>
+            <li>
+              <div className="label">Categories</div>
+            </li>
+
+            <li>
+              <div className='space'></div>
+            </li>
+
+            {/* categories are fetched */}
+            <CategoriesFeed categories={categories} />
+
           </ul>
-        )}
+        </nav>
+      </div>
 
-        {/* categories are fetched */}
-          <CategoriesFeed categories={categories} />
+      <div className='childDiv'>
+        <FilterBar />
+      </div>
 
-      </ul>
-    </nav>
+    </div>
+
   );
 }

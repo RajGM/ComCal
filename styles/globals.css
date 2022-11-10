@@ -351,7 +351,7 @@ input[type="file"] {
   }
 
   .eventCard{
-    width: 50%;
+    width: 430px;
   }
 }
 
@@ -430,3 +430,16 @@ footer{
   border-radius: 50%;
 }
 
+.label{
+  border: 1px solid black;
+  font-size: 2rem;
+  font-family: 'Noto Sans', sans-serif;
+  border: 5px solid black;
+  box-shadow: 5px 5px;
+  min-width: 190px;
+  text-align: center;
+}
+
+.space{
+  min-width: 10px;
+}

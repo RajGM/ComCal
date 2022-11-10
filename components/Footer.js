@@ -15,7 +15,7 @@ export default function Footer() {
                 </a>
             </div>
             <div>
-                Made by <a href="https://github.com/RajGM" target="_blank">RajGM</a>
+                InfiOpp by <a href="https://github.com/RajGM" target="_blank">RajGM</a>
             </div>
             <div>
                 <a href="https://www.linkedin.com/in/rajgm29/" target="_blank">
