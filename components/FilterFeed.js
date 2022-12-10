@@ -7,7 +7,6 @@ const categoriesAndFilters = {
 }
 
 export default function FilterFeed({ selectedCategory }) {
-
   let filters = categoriesAndFilters[selectedCategory];
   return filters ? filters.map((filter) => <FilterBar filter={filter} key={filter} />) : null;
 }

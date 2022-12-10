@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { catogriesContext } from '@lib/context';
+import { UserContext } from '@lib/context';
 import Loader from "@components/Loader";
 import FilterFeed from "@components/FilterFeed";
 
 //CategoryBar
-export default function FilterBar() {
-  const { selectedCategory, username } = useContext(catogriesContext);
-  
+export default function FilterBar(selectedC) {
+  const { username } = useContext(UserContext);
+  console.log("selectedC:",selectedC);
   return (
     <nav className="categoryBar">
       <ul>
@@ -25,7 +25,7 @@ export default function FilterBar() {
         )}
 
         {/* categories are fetched */}
-        <FilterFeed selectedCategory={"Scholarships"}/>
+        <FilterFeed selectedCategory={selectedC.selectedC}/>
 
       </ul>
     </nav>

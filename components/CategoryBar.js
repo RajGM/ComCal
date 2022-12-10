@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react';
-import { UserContext } from '@lib/context';
+import { useState } from 'react';
 import CategoriesFeed from "@components/CategoriesFeed";
-let categories = ["Hackathon", "OpenSource", "Internships", "Scholarships", "College Applications"];
+let categories = ["Hackathon", "OpenSource", "Internship", "Scholarships", "College Applications"];
 import FilterBar from "@components/FilterBar";
 
 //CategoryBar
 export default function CategoryBar() {
-  const { username } = useContext(UserContext);
-  
+  const[stateC, setCState]=useState('Hackathon');
+
+  console.log("stateC:",stateC);
   return (
     <div className='middle'>
       <div className='childDiv'>
@@ -22,14 +22,14 @@ export default function CategoryBar() {
             </li>
 
             {/* categories are fetched */}
-            <CategoriesFeed categories={categories} />
+            <CategoriesFeed categories={categories} cChanger={setCState} />
 
           </ul>
         </nav>
       </div>
 
       <div className='childDiv'>
-        <FilterBar />
+        <FilterBar selectedC={stateC}/>
       </div>
 
     </div>
