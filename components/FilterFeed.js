@@ -1,20 +1,35 @@
+import { firestore} from '@lib/firebase';
+
 const categoriesAndFilters = {
   "Hackathon": ["Onsite", "Remote", "Hybrid"],
-  "OpenSource": ["MLH", "LFX", "Google Summer of Code", "Hacktoberfest", "GSoD"],
+  "OpenSource": ["MLH", "LFX", "GSoC", "Hacktoberfest", "GSoD"],
   "Internship": ["SWE", "PM", "UI/UX"],
-  "Collge Applications": ["Fall", "Spring", "Summer"]
+  "College Applications": ["Fall", "Spring", "Summer"]
   , "Scholarships": ["Research", "Fee waiver", "RAship"]
 }
 
+let filters = categoriesAndFilters["Hackathon"];
+let sc = "";
+
 export default function FilterFeed({ selectedCategory }) {
-  let filters = categoriesAndFilters[selectedCategory];
+  filters = categoriesAndFilters[selectedCategory];
+  sc = selectedCategory;
   return filters ? filters.map((filter) => <FilterBar filter={filter} key={filter} />) : null;
 }
 
 function FilterBar({ filter }) {
+
+  async function testFun() {
+    const query = firestore.collectionGroup('Hackathon').where('Type', '==', filter.toLowerCase());
+    const queryData = (await query.get()).docs.map((doc) => doc.data());
+    console.log(queryData);
+    console.log(filter.toLowerCase());
+
+  }
+
   return (
     <div className="btn-logo">
-      <button className="btn-logo">{filter}</button>
+      <button className="btn-logo" onClick={testFun} >{filter}</button>
     </div>
   );
 }

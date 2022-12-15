@@ -7,7 +7,6 @@ import FilterBar from "@components/FilterBar";
 export default function CategoryBar() {
   const[stateC, setCState]=useState('Hackathon');
 
-  console.log("stateC:",stateC);
   return (
     <div className='middle'>
       <div className='childDiv'>

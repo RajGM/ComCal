@@ -6,7 +6,7 @@ import FilterFeed from "@components/FilterFeed";
 //CategoryBar
 export default function FilterBar(selectedC) {
   const { username } = useContext(UserContext);
-  console.log("selectedC:",selectedC);
+  
   return (
     <nav className="categoryBar">
       <ul>

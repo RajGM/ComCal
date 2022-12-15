@@ -3,17 +3,9 @@ export default function CategoriesFeed({ categories,cChanger }) {
 }
 
 function CategoryBar({ category,cChanger }) {
-  
-  function selectCategory(category) {
-
-    console.log("Selected Category:",category);
-    cChanger(category);
-    console.log("Later Category:",category);
-  }
-
   return (
     <div className="btn-logo">
-      <button className="btn-logo" onClick={() => { selectCategory(category) }}>{category}</button>
+      <button className="btn-logo" onClick={() => cChanger(category)}>{category}</button>
     </div>
   );
 }
