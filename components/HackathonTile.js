@@ -16,16 +16,16 @@ export default function TestTile({ data }) {
                 <img src="export.png" alt="title" className="redirectIcon" onMouseEnter={() => setDataToshow(data.Link)} onMouseLeave={() => setDataToshow(data.title)} />
             </div>
             <div>
-                Application Starts:{data.ApplicationDate}
+                Application Starts:{"data.ApplicationDate"}
             </div>
             <div>
-                Application Ends:{data.ApplicationDate}
+                Application Ends:{"data.ApplicationDate"}
             </div>
             <div>
-                Hackathon Begins:{data.ApplicationDate}
+                Hackathon Begins:{"data.ApplicationDate"}
             </div>
             <div>
-                Hackathon Ends:{data.EventDate}
+                Hackathon Ends:{"data.EventDate"}
             </div>
             <div className="rowFlex">
                 <div>

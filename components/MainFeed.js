@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 import HackathonTile from './HackathonTile';
 import { useAtom } from 'jotai';
 import { categoriesAtom, filterAtom } from './atoms';
+import { firestore } from '@lib/firebase';
 
 let data = {
     title: "HackHarvard",
@@ -15,7 +16,7 @@ let data = {
 }
 let data2 = {
     title: "HackStanford",
-    Link: "https://hackharvard.io/",
+    Link: "https://www.treehacks.com/",
     ApplicationDate: "2021-09-01",
     EventDate: "2021-09-01",
     PostedBy: "RajGM",
@@ -25,7 +26,7 @@ let data2 = {
 }
 let data3 = {
     title: "CalHacks",
-    Link: "https://hackharvard.io/",
+    Link: "https://www.calhacks.io/",
     ApplicationDate: "2021-09-01",
     EventDate: "2021-09-01",
     PostedBy: "RajGM",
@@ -34,10 +35,20 @@ let data3 = {
     Sponsored: false
 }
 
-let arrData = [data, data2, data3, data]
+let arrData = [data, data2, data3, data];
+
+let dataToShow = [];
 
 function CardField({ arrData }) {
     return arrData ? arrData.map((indiData) => <div className="eventCard"> <HackathonTile data={indiData} key={indiData} /></div>) : null;
+}
+
+async function queryTest(category, filter) {
+    const query = firestore.collectionGroup('Hackathon').where('Type', '==', filter.toLowerCase());
+    const queryData = (await query.get()).docs.map((doc) => doc.data());
+    console.log(queryData);
+    console.log(arrData);
+    dataToShow=queryData;
 }
 
 export default function MainFeed() {
@@ -48,12 +59,12 @@ export default function MainFeed() {
     useEffect(() => {
         console.log(category);
         console.log(filter);
-    }), [category, filter];
+        queryTest(category,filter);
+    }), [filter];
 
     return (
         <div className="mainFeed">
-            <CardField arrData={arrData} />
-
+            {dataToShow.length>1?<CardField arrData={dataToShow} />:<CardField arrData={arrData} />}
         </div>
     );
 }
