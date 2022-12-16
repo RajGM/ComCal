@@ -1,4 +1,6 @@
-import { firestore} from '@lib/firebase';
+import { firestore } from '@lib/firebase';
+import { useAtom } from 'jotai';
+import { filterAtom } from './atoms';
 
 const categoriesAndFilters = {
   "Hackathon": ["Onsite", "Remote", "Hybrid"],
@@ -18,12 +20,14 @@ export default function FilterFeed({ selectedCategory }) {
 }
 
 function FilterBar({ filter }) {
-
+  const [,updateFilterAtom] = useAtom(filterAtom);
+  
   async function testFun() {
-    const query = firestore.collectionGroup('Hackathon').where('Type', '==', filter.toLowerCase());
-    const queryData = (await query.get()).docs.map((doc) => doc.data());
-    console.log(queryData);
-    console.log(filter.toLowerCase());
+    // const query = firestore.collectionGroup('Hackathon').where('Type', '==', filter.toLowerCase());
+    // const queryData = (await query.get()).docs.map((doc) => doc.data());
+    // console.log(queryData);
+    // console.log(filter.toLowerCase());
+    updateFilterAtom(filter.toLowerCase());
 
   }
 

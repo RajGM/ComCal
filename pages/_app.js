@@ -3,15 +3,18 @@ import { UserContext } from '@lib/context';
 import { useUserData } from '@lib/hooks';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
+import { Provider as JotaiProvider } from "jotai";
 
 function MyApp({ Component, pageProps }) {
   const userData = useUserData(UserContext);
 
   return (
     <UserContext.Provider value={userData}>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <JotaiProvider>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </JotaiProvider>
     </UserContext.Provider>
   );
 }

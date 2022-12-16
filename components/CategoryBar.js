@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import CategoriesFeed from "@components/CategoriesFeed";
 let categories = ["Hackathon", "OpenSource", "Internship", "Scholarships", "College Applications"];
 import FilterBar from "@components/FilterBar";
 
 //CategoryBar
 export default function CategoryBar() {
-  const[stateC, setCState]=useState('Hackathon');
+  const [stateC, setCState] = useState('Hackathon');
 
   return (
     <div className='middle'>
@@ -28,7 +28,7 @@ export default function CategoryBar() {
       </div>
 
       <div className='childDiv'>
-        <FilterBar selectedC={stateC}/>
+        <FilterBar selectedC={stateC} />
       </div>
 
     </div>
