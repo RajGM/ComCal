@@ -6,12 +6,12 @@ export default function Footer() {
         <footer>
             <div>
                 <a href="https://www.linkedin.com/in/rajgm29/" target="_blank">
-                <img src="/linkedin.png" alt="title" className="footerLogo" />
+                    <img src="/linkedin.png" alt="title" className="footerLogo" />
                 </a>
             </div>
             <div>
                 <a href="https://twitter.com/RajGM_Hacks/" target="_blank">
-                <img src="/twitter.png" alt="title" className="footerLogo" />
+                    <img src="/twitter.png" alt="title" className="footerLogo" />
                 </a>
             </div>
             <div>
@@ -19,12 +19,12 @@ export default function Footer() {
             </div>
             <div>
                 <a href="https://www.linkedin.com/in/rajgm29/" target="_blank">
-                <img src="/linkedin.png" alt="title" className="footerLogo" />
+                    <img src="/linkedin.png" alt="title" className="footerLogo" />
                 </a>
             </div>
             <div>
                 <a href="https://twitter.com/RajGM_Hacks/" target="_blank">
-                <img src="/twitter.png" alt="title" className="footerLogo" />
+                    <img src="/twitter.png" alt="title" className="footerLogo" />
                 </a>
             </div>
         </footer>

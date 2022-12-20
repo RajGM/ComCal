@@ -47,7 +47,6 @@ async function queryTest(category, filter) {
     const query = firestore.collectionGroup('Hackathon').where('Type', '==', filter.toLowerCase());
     const queryData = (await query.get()).docs.map((doc) => doc.data());
     console.log(queryData);
-    console.log(arrData);
     dataToShow=queryData;
 }
 

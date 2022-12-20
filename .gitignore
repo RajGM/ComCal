@@ -38,6 +38,3 @@ yarn-error.log*
 google-services.json
 config.tsx
 keys.json
-
-#firebase
-/lib/firebase.tsx
